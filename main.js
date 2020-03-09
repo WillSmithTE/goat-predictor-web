@@ -1,10 +1,23 @@
+const PREDICTOR_URL = 'http://goat-predictor.herokuapp.com/goat/';
+
 function predict() {
     event.preventDefault();
     const name = document.getElementById('nameInput').value;
-    const prediction = getPrediction(name);
-    document.getElementById('result').innerHTML = prediction;
+    const formattedName = formatName(name);
+    $.get(
+        PREDICTOR_URL + formattedName,
+        (response) => {
+            const displayText = formatResponse(response);
+            document.getElementById('result').innerHTML = displayText;
+        }
+    );
 }
 
-function getPrediction(name) {
-    return 'GOAT';
+function formatResponse(isGoat) {
+    return isGoat === 'true' ? 'G O A T' : `that's not a goat ..`;
+}
+
+function formatName(name) {
+    const lowerCase = name.toLowerCase();
+    return lowerCase.replace(' ', '');
 }
