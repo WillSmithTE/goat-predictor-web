@@ -1,4 +1,4 @@
-function predictderp() {
+function predict() {
     event.preventDefault();
     const name = document.getElementById('nameInput').value;
     const prediction = getPrediction(name);
