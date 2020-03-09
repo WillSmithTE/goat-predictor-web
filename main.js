@@ -1,4 +1,4 @@
-const PREDICTOR_URL = 'http://goat-predictor.herokuapp.com/goat/';
+const PREDICTOR_URL = 'https://goat-predictor.herokuapp.com/goat/';
 
 function predict() {
     event.preventDefault();
