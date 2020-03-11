@@ -2,11 +2,11 @@ const PREDICTOR_URL = 'https://goat-predictor.herokuapp.com/goat/';
 
 function predict() {
     event.preventDefault();
-    const name = document.getElementById('nameInput').value;
-    const formattedName = formatName(name);
+    const college = document.getElementById('collegeInput').value;
+    const rings = document.getElementById('ringsInput').value;
+    const formattedCollege = formatInput(college);
     $.get(
-        PREDICTOR_URL + formattedName,
-        (response) => {
+        buildUrl(formattedCollege, rings),        (response) => {
             const displayText = formatResponse(response);
             document.getElementById('result').innerHTML = displayText;
         }
@@ -17,7 +17,14 @@ function formatResponse(isGoat) {
     return isGoat === 'true' ? 'G O A T' : `that's not a goat ..`;
 }
 
-function formatName(name) {
-    const lowerCase = name.toLowerCase();
+function formatInput(input) {
+    const lowerCase = input.toLowerCase();
     return lowerCase.replace(' ', '');
 }
+
+buildUrl(college, rings) {
+    return PREDICTOR_URL + '?' +
+	'college=' + college,
+	'rings=' + rings;
+}
+

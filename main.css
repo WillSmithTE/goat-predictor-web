@@ -10,3 +10,8 @@
     100% { color: #000; }
 
 }
+
+input {
+	display: block;
+}
+
