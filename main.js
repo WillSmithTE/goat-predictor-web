@@ -13,8 +13,8 @@ function predict() {
     );
 }
 
-function formatResponse(isGoat) {
-    return isGoat === 'true' ? 'G O A T' : `that's not a goat ..`;
+function formatResponse(score) {
+    return score === 100 ? 'G O A T' : score + '? that's not a goat ..`;
 }
 
 function formatInput(input) {
