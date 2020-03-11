@@ -1,4 +1,4 @@
-const PREDICTOR_URL = 'https://goat-predictor.herokuapp.com/goat/';
+const PREDICTOR_URL = 'https://goat-predictor.herokuapp.com/goat';
 
 function predict() {
     event.preventDefault();
@@ -14,7 +14,7 @@ function predict() {
 }
 
 function formatResponse(score) {
-    return score === 100 ? 'G O A T' : score + '? that's not a goat ..`;
+    return score === 100 ? 'G O A T' : score + `? that's not a goat ..`;
 }
 
 function formatInput(input) {
@@ -22,9 +22,9 @@ function formatInput(input) {
     return lowerCase.replace(' ', '');
 }
 
-buildUrl(college, rings) {
+function buildUrl(college, rings) {
     return PREDICTOR_URL + '?' +
-	'college=' + college,
+	'college=' + college + '&' +
 	'rings=' + rings;
 }
 
