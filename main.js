@@ -6,9 +6,8 @@ function predict() {
     const rings = document.getElementById('ringsInput').value;
     const formattedCollege = formatInput(college);
     $.get(
-        buildUrl(formattedCollege, rings),        (response) => {
-            const displayText = formatResponse(response);
-            document.getElementById('result').innerHTML = displayText;
+        buildUrl(formattedCollege, rings), (response) => {
+            document.getElementById('result').innerHTML = response;
         }
     );
 }
@@ -24,7 +23,7 @@ function formatInput(input) {
 
 function buildUrl(college, rings) {
     return PREDICTOR_URL + '?' +
-	'college=' + college + '&' +
-	'rings=' + rings;
+        'college=' + college + '&' +
+        'rings=' + rings;
 }
 
