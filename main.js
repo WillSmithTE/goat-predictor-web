@@ -7,7 +7,7 @@ function predict() {
     const formattedCollege = formatInput(college);
     $.get(
         buildUrl(formattedCollege, rings), (response) => {
-            document.getElementById('result').innerHTML = response;
+            document.getElementById('result').innerHTML = JSON.parse(response);
         }
     );
 }
