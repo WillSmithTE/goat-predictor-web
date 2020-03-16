@@ -4,9 +4,10 @@ function predict() {
     event.preventDefault();
     const college = document.getElementById('collegeInput').value;
     const rings = document.getElementById('ringsInput').value;
+    const siblings = document.getElementById('siblingsInput').value;
     const formattedCollege = formatInput(college);
     $.get(
-        buildUrl(formattedCollege, rings), (response) => {
+        buildUrl(formattedCollege, rings, siblings), (response) => {
             document.getElementById('result').innerHTML = JSON.parse(response);
         }
     );
@@ -21,9 +22,10 @@ function formatInput(input) {
     return lowerCase.replace(' ', '');
 }
 
-function buildUrl(college, rings) {
+function buildUrl(college, rings, siblings) {
     return PREDICTOR_URL + '?' +
         'college=' + college + '&' +
-        'rings=' + rings;
+        'rings=' + rings + '&' +
+        'siblings=' + siblings;
 }
 

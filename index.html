@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>GOAT Predictor</title>
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="main.css"></link>    
+    <link rel="stylesheet" href="main.css">
+    </link>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <form onsubmit="predict()">
-        <input id="collegeInput" placeholder="University of Kentucky" type="text"/>
-	<input id="ringsInput" placeholder="Number of rings" type="number"/>
-        <input value="predict" type="submit"/>
+        <input id="collegeInput" placeholder="University of Kentucky" type="text" />
+        <input id="ringsInput" placeholder="Number of rings" type="number" />
+        <input id="siblingsInput" placeholder="Number of siblings" type="number" />
+        <input value="predict" type="submit" />
     </form>
     <h1 id="result"></h1>
 </body>
+
 </html>
