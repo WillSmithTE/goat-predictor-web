@@ -5,9 +5,11 @@ function predict() {
     const college = document.getElementById('collegeInput').value;
     const rings = document.getElementById('ringsInput').value;
     const siblings = document.getElementById('siblingsInput').value;
+    const middleNameCount = document.getElementById('middleNameCountInput').value;
+    const draftNumber = document.getElementById('draftNumberInput').value;
     const formattedCollege = formatInput(college);
     $.get(
-        buildUrl(formattedCollege, rings, siblings), (response) => {
+        buildUrl(formattedCollege, rings, siblings, middleNameCount, draftNumber), (response) => {
             document.getElementById('result').innerHTML = JSON.parse(response);
         }
     );
@@ -22,10 +24,12 @@ function formatInput(input) {
     return lowerCase.replace(' ', '');
 }
 
-function buildUrl(college, rings, siblings) {
+function buildUrl(college, rings, siblings, middleNameCount, draftNumber) {
     return PREDICTOR_URL + '?' +
         'college=' + college + '&' +
         'rings=' + rings + '&' +
-        'siblings=' + siblings;
+        'siblings=' + siblings + '&' +
+        'middleNameCount=' + middleNameCount + '&' +
+        'draftNumber=' + draftNumber;
 }
 
