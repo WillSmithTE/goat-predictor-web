@@ -6,21 +6,21 @@
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="main.css">
-    </link>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
     <form onsubmit="predict()">
-        <input id="collegeInput" placeholder="University of Kentucky" type="text" />
-        <input id="ringsInput" placeholder="Number of rings" type="number" />
-        <input id="siblingsInput" placeholder="Number of siblings" type="number" />
-        <input id="middleNameCountInput" placeholder="Number of middle names" type="number" />
-        <input id="draftNumberInput" placeholder="Draft position" type="number" />
+        <input id="collegeInput" placeholder="University of Kentucky" type="text" /><br />
+        <input id="ringsInput" placeholder="Number of rings" type="number" /><br />
+        <input id="siblingsInput" placeholder="Number of siblings" type="number" /><br />
+        <input id="middleNameCountInput" placeholder="Number of middle names" type="number" /><br />
+        <input id="draftNumberInput" placeholder="Draft position" type="number" /><br />
         <input value="predict" type="submit" />
     </form>
     <h1 id="result"></h1>
 </body>
-
 </html>
